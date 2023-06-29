@@ -3,7 +3,7 @@ using Microsoft.Extensions.Options;
 using FluentAssertions;
 using Shared;
 
-namespace ConfigurationTestV6;
+namespace ConfigurationTestV8Preview;
 
 public class ConfigurationTests
 {

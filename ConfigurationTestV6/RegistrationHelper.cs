@@ -1,6 +1,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using ConfigurationTestV6.Configuration;
+using Shared;
 
 namespace ConfigurationTestV6;
 

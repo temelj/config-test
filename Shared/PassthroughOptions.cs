@@ -1,5 +1,8 @@
-namespace ConfigurationTestV6.Configuration;
+namespace Shared;
 
+/// <summary>
+/// Passthrough options.
+/// </summary>
 public class PassthroughOptions
 {
     public static List<string> EmptyList = new();

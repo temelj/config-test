@@ -2,7 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Shared;
 
-namespace ConfigurationTestV7;
+namespace ConfigurationTestV8Preview;
 
 public static class RegistrationHelper
 {
