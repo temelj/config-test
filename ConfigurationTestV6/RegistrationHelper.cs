@@ -1,8 +1,8 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using TestProject1.Configuration;
+using ConfigurationTestV6.Configuration;
 
-namespace TestProject1;
+namespace ConfigurationTestV6;
 
 public static class RegistrationHelper
 {
