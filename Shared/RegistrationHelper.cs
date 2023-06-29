@@ -2,7 +2,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Shared;
 
-namespace ConfigurationTestV7;
+namespace Test;
 
 public static class RegistrationHelper
 {
@@ -17,8 +17,14 @@ public static class RegistrationHelper
 
         services.AddOptions<PassthroughOptions>()
             .Configure<IConfiguration>((settings, config) => config
+                .GetSection("Base")
                 .GetSection(nameof(PassthroughOptions))
-                .Bind(settings));
+                .Bind(settings))
+            .PostConfigure(settings =>
+            {
+                // set default values
+                settings.Headers.Add("CorrelationId");
+            });
 
         return services.BuildServiceProvider();
     }

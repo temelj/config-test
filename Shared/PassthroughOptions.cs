@@ -1,22 +1,22 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace Shared;
 
 /// <summary>
 /// Passthrough options.
 /// </summary>
-public class PassthroughOptions
+public class PassthroughOptions : IPassthroughOptions
 {
-    public static List<string> EmptyList = new();
-    public static List<string> DefaultList = new() { "Default1", "Default2", "Duplicate" };
-    public ICollection<string>? ICollection { get; set; }
+    /// <summary>
+    /// Gets or sets the headers.
+    /// </summary>
+    public HashSet<string> Headers { get; } = new HashSet<string>();
+}
 
-    public ICollection<string> ICollectionEmpty {get;set;} = EmptyList;
-
-    public ICollection<string> ICollectionDefault {get; set;} = DefaultList;
-
-    public IReadOnlyCollection<string>? IReadOnlyCollection { get; set; }
-
-    public IReadOnlyCollection<string> IReadOnlyCollectionEmpty {get; set;} = EmptyList;
-
-    public IReadOnlyCollection<string> IReadonlyCollectionDefault {get; set;} = DefaultList;
-
+public interface IPassthroughOptions
+{
+    /// <summary>
+    /// Gets or sets the headers.
+    /// </summary>
+    public HashSet<string> Headers { get; }
 }
